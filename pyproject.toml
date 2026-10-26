@@ -1,0 +1,20 @@
+[project]
+name = "sim2real-lab"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+  "gymnasium[mujoco]>=1.0",
+  "stable-baselines3>=2.3",
+  "numpy", "scipy", "matplotlib", "pyyaml", "pydantic>=2",
+]
+
+[project.optional-dependencies]
+graph = ["neo4j>=5"]
+agent = ["anthropic"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
